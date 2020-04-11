@@ -9,10 +9,10 @@ const http = require('http');
 const JSONStream = require('JSONStream');
 const limit = 7; // The number of songs to retrieve for each artist
 const parser = JSONStream.parse(['results', true]);
-const popIds = artistIds.pop;
+const popIds = artistIds.zeroes;
 const rapIds = artistIds.nederlands;
+const rockIds = artistIds.dbvh;
 const rc = require('redis').createClient({ host: db, port: port })
-const rockIds = artistIds.rock;
 let rooms = require('../config').rooms;
 let score;
 let skip = 0; // Skip counter
@@ -50,6 +50,7 @@ const updateRooms = function(artistId) {
   }
 };
 
+
 parser.on('data', function(track) {
   if (track.wrapperType === 'artist') {
     console.log('\x1b[36m%s\x1b[0m', track.artistName);
@@ -61,27 +62,34 @@ parser.on('data', function(track) {
     return;
   }
 
-  console.log(track.trackName);
-  rc.hmset(
-    'song:' + songId,
-    'artistName',
-    track.artistName,
-    'trackName',
-    track.trackName,
-    'trackViewUrl',
-    track.trackViewUrl,
-    'previewUrl',
-    track.previewUrl,
-    'artworkUrl60',
-    track.artworkUrl60,
-    'artworkUrl100',
-    track.artworkUrl100
-  );
+  //console.log(track.trackName);
 
-  rooms.forEach(function(room) {
-    const _score = room === 'mixed' ? songId : score;
-    rc.zadd(room, _score, songId);
-  });
+  if (track.artistName && track.trackName && track.trackViewUrl && track.previewUrl) {
+    rc.hmset(
+        'song:' + songId,
+        'artistName',
+        track.artistName,
+        'trackName',
+        track.trackName,
+        'trackViewUrl',
+        track.trackViewUrl,
+        'previewUrl',
+        track.previewUrl,
+        'artworkUrl60',
+        track.artworkUrl60,
+        'artworkUrl100',
+        track.artworkUrl100
+    );
+
+    rooms.forEach(function (room) {
+      const _score = room === 'mixed' ? songId : score;
+      rc.zadd(room, _score, songId);
+    });
+
+  }else{
+    process.stdout.write('ERRROR ERROR ERROR ERROR ERROR ERROR');
+    console.log("ERRROR");
+  }
 
   score++;
   songId++;
