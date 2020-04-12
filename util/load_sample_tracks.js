@@ -7,11 +7,15 @@ var port = process.env.REDIS_PORT || 6379
 const artistIds = require('./artist-ids');
 const http = require('http');
 const JSONStream = require('JSONStream');
-const limit = 7; // The number of songs to retrieve for each artist
+const limit = 8; // The number of songs to retrieve for each artist
 const parser = JSONStream.parse(['results', true]);
-const popIds = artistIds.zeroes;
-const rapIds = artistIds.nederlands;
-const rockIds = artistIds.dbvh;
+
+const nineteesIds = artistIds.ninetees;
+const zeroesIds = artistIds.zeroes;
+const nederlandsIds = artistIds.nederlands;
+const dbvhIds = artistIds.dbvh;
+
+
 const rc = require('redis').createClient({ host: db, port: port })
 let rooms = require('../config').rooms;
 let score;
@@ -24,7 +28,7 @@ const options = {
   // Look up multiple artists by their IDs and get `limit` songs for each one
   path:
     '/lookup?id=' +
-    popIds.concat(rapIds, rockIds).join() +
+    nineteesIds.concat(zeroesIds, nederlandsIds, dbvhIds).join() +
     '&entity=song&limit=' +
     limit + '&country=NL&sort=popular',
   port: 80
@@ -37,16 +41,19 @@ const options = {
 const updateRooms = function(artistId) {
   rooms = ['mixed'];
   score = 0;
-  if (artistId === popIds[0]) {
-    rooms.push('hits', 'pop');
+  if (artistId === nineteesIds[0]) {
+    rooms.push('ninetees', 'zeroes and ninetees', 'mixed');
     // Set the skip counter (there is no need to update the rooms for the next pop artists)
-    skip = popIds.length - 1;
-  } else if (artistId === rapIds[0]) {
-    rooms.push('nederlands', 'hits');
-    skip = rapIds.length - 1;
+    skip = nineteesIds.length - 1;
+  } else if (artistId === zeroesIds[0]) {
+    rooms.push('zeroes', 'zeroes and ninetees', 'mixed');
+    skip = zeroesIds.length - 1;
+  } else if (artistId === nederlandsIds[0]) {
+    rooms.push('nederlands', 'mixed');
+    skip = nederlandsIds.length - 1;
   } else {
-    rooms.push('oldies', 'rock');
-    skip = rockIds.length - 1;
+    rooms.push('dbvh');
+    skip = dbvhIds.length - 1;
   }
 };
 
@@ -88,7 +95,6 @@ parser.on('data', function(track) {
 
   }else{
     process.stdout.write('ERRROR ERROR ERROR ERROR ERROR ERROR');
-    console.log("ERRROR");
   }
 
   score++;
