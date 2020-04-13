@@ -42,11 +42,11 @@ const updateRooms = function(artistId) {
   rooms = ['mixed'];
   score = 0;
   if (artistId === nineteesIds[0]) {
-    rooms.push('ninetees', 'zeroes and ninetees', 'mixed');
+    rooms.push('ninetees', 'zeroes-ninetees', 'mixed');
     // Set the skip counter (there is no need to update the rooms for the next pop artists)
     skip = nineteesIds.length - 1;
   } else if (artistId === zeroesIds[0]) {
-    rooms.push('zeroes', 'zeroes and ninetees', 'mixed');
+    rooms.push('zeroes', 'zeroes-ninetees', 'mixed');
     skip = zeroesIds.length - 1;
   } else if (artistId === nederlandsIds[0]) {
     rooms.push('nederlands', 'mixed');

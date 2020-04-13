@@ -38,7 +38,6 @@ module.exports = {
     4488522 // Pink
   ],
   nederlands: [
-    26359639, // Acda en De Munnik
     348185755, // Jurk
     269270940, // KvK
     25341954, // K3
@@ -66,7 +65,6 @@ module.exports = {
     291223472, // Frans bauer
     17430541, // Renee froger
     32542478, // Frank boeijen
-    112527433, // Gebroeders KO
     31316790, // Klein orkest
     204717604, //  Nick en simon
     135814333, // Baas B
@@ -81,7 +79,6 @@ module.exports = {
     1407841072, // feestdjruud
     1278894800, // donnie
     441533425, // barry badpak
-    463506279, // de kraaien
     2782314, // brainpower
     1138876784, // mario kartel
     455257183, // dj paul
