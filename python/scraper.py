@@ -1,11 +1,18 @@
-import requests, re
+import requests
+import re
 from bs4 import BeautifulSoup
-from csv import writer
+import yaml
 
-folder = "output/"
+output = {}
+
 maxLength = 30
+limit = 7
 
 genre = "seventies"
+
+output[genre] = {}
+output[genre]["songs"] = limit
+output[genre]["artists"] = []
 
 response = requests.get('https://top40weekly.com/top-100-artists-of-the-70s/')
 
@@ -13,19 +20,17 @@ soup = BeautifulSoup(response.text, 'html.parser')
 
 artists = soup.find_all(class_={"artist-title"})
 
-f = open(folder + genre + ".txt", "w")
-
 for artist in artists:
     name = artist.get_text()[3:]
     if(len(name) < maxLength):
-        f.write(name)
-        f.write("\n")
+        output[genre]["artists"].append(name)
 
-f.close()
-
-print("\n"+ genre + " downloaded")
+print("\n" + genre + " downloaded")
 
 genre = "eighties"
+output[genre] = {}
+output[genre]["songs"] = limit
+output[genre]["artists"] = []
 
 response = requests.get('https://top40weekly.com/top-100-artists-of-the-80s/')
 
@@ -33,55 +38,54 @@ soup = BeautifulSoup(response.text, 'html.parser')
 
 artists = soup.find_all(class_="song-title")
 
-f = open(folder + genre + ".txt", "w")
-
 for artist in artists:
     name = artist.get_text()
-    f.write(name)
+    output[genre]["artists"].append(name.rstrip("\n"))
 
-f.close()
-
-print("\n"+ genre + " downloaded")
+print("\n" + genre + " downloaded")
 
 genre = "nineties"
+output[genre] = {}
+output[genre]["songs"] = limit
+output[genre]["artists"] = []
 
 response = requests.get('https://top40weekly.com/top-100-artists-of-the-90s/')
 
 soup = BeautifulSoup(response.text, 'html.parser')
 
-artists = soup.findAll('a', attrs={'href' : re.compile('^https://www.amazon.com')})
+artists = soup.findAll(
+    'a', attrs={'href': re.compile('^https://www.amazon.com')})
 
-f = open(folder + genre + ".txt", "w")
 
 for artist in artists:
     name = artist.get_text()
-    f.write(name)
-    f.write("\n")
+    output[genre]["artists"].append(name.rstrip("\n"))
 
-f.close()
-
-print("\n"+ genre + " downloaded")
+print("\n" + genre + " downloaded")
 
 genre = "zeroes"
+output[genre] = {}
+output[genre]["songs"] = limit
+output[genre]["artists"] = []
 
 response = requests.get('https://top40weekly.com/top-100-artists-of-the-00s/')
 
 soup = BeautifulSoup(response.text, 'html.parser')
 
-artists = soup.findAll('a', attrs={'href' : re.compile('^https://www.amazon.com')})
+artists = soup.findAll(
+    'a', attrs={'href': re.compile('^https://www.amazon.com')})
 
-f = open(folder + genre + ".txt", "w")
 
 for artist in artists:
     name = artist.get_text()
-    f.write(name)
-    f.write("\n")
+    output[genre]["artists"].append(name.rstrip("\n"))
 
-f.close()
-
-print("\n"+ genre + " downloaded")
+print("\n" + genre + " downloaded")
 
 genre = "tens"
+output[genre] = {}
+output[genre]["songs"] = limit
+output[genre]["artists"] = []
 
 response = requests.get('https://top40weekly.com/top-100-artists-of-the-10s/')
 
@@ -89,36 +93,37 @@ soup = BeautifulSoup(response.text, 'html.parser')
 
 artists = soup.find_all(class_="t40w-artist")
 
-f = open(folder + genre + ".txt", "w")
-
 for artist in artists:
     name = artist.get_text()
-    f.write(name)
+    output[genre]["artists"].append(name.rstrip("\n"))
 
-f.close()
 
-print("\n"+ genre + " downloaded")
+print("\n" + genre + " downloaded")
 
 genre = "sixties"
+output[genre] = {}
+output[genre]["songs"] = limit
+output[genre]["artists"] = []
 
 response = requests.get('https://top40weekly.com/top-100-artists-of-the-60s/')
 
 soup = BeautifulSoup(response.text, 'html.parser')
 
-artists = soup.findAll('a', attrs={'href' : re.compile('^https://www.amazon.com')})
+artists = soup.findAll(
+    'a', attrs={'href': re.compile('^https://www.amazon.com')})
 
-f = open(folder + genre + ".txt", "w")
 
 for artist in artists:
     name = artist.get_text()
-    f.write(name)
-    f.write("\n")
+    output[genre]["artists"].append(name.rstrip("\n"))
 
-f.close()
 
-print("\n"+ genre + " downloaded")
+print("\n" + genre + " downloaded")
 
 genre = "nederlands"
+output[genre] = {}
+output[genre]["songs"] = limit
+output[genre]["artists"] = []
 
 response = requests.get('https://nederlandse-artiesten.startpagina.nl/')
 
@@ -126,13 +131,15 @@ soup = BeautifulSoup(response.text, 'html.parser')
 
 artists = soup.find_all(class_="single-link")
 
-f = open(folder + genre + ".txt", "w")
 
 for artist in artists:
     name = artist.get_text()
-    f.write(name)
-    f.write("\n")
+    output[genre]["artists"].append(name.rstrip("\n"))
 
-f.close()
 
-print("\n"+ genre + " downloaded")
+print("\n" + genre + " downloaded")
+
+print("\nCreating output\n")
+
+with open('output.yml', 'w') as file:
+    documents = yaml.dump(output, file)

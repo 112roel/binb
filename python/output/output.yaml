@@ -1,0 +1,412 @@
+seventies:
+	songs: 7
+	artists:
+		- Stevie Wonder
+		- Led Zeppelin
+		- Elton John
+		- Pink Floyd
+		- The Rolling Stones
+		- Eagles
+		- Marvin Gaye
+		- Queen
+		- James Brown
+		-  The Who
+		-  Black Sabbath
+		-  Aretha Franklin
+		-  David Bowie
+		-  Paul McCartney / Wings
+		-  Parliament Funkadelic
+		-  The Isley Brothers
+		-  Fleetwood Mac
+		-  John Lennon
+		-  Bee Gees
+		-  Chicago
+		-  Bob Marley
+		-  The Jackson 5
+		-  Earth, Wind & Fire
+		-  Al Green
+		-  Bruce Springsteen
+		-  KISS
+		-  The Clash
+		-  Curtis Mayfield
+		-  Lynyrd Skynyrd
+		-  Alice Cooper
+		-  Gladys Knight & The Pips
+		-  The Allman Brothers Band
+		-  Aerosmith
+		-  Neil Young
+		-  Bob Dylan
+		-  Rod Stewart
+		-  The O’Jays
+		-  The Ramones
+		-  Rush
+		-  Bob Seger
+		-  Steve Miller Band
+		-  Grateful Dead
+		-  The Beach Boys
+		-  George Harrison
+		-  Sly and the Family Stone
+		-  Peter Frampton
+		-  Elvis Presley
+		-  Billy Joel
+		-  Deep Purple
+		-  Creedence Clearwater Revival
+		-  Three Dog Night
+		-  The Temptations
+		-  Boston
+		-  Jackson Browne
+		-  Joni Mitchell
+		-  Commodores
+		-  Jim Croce
+		-  AC/DC
+		-  The Spinners
+		-  Kool and The Gang
+		-  Doobie Brothers
+		-  Yes
+		-  War
+		-  ZZ Top
+		-  The Guess Who
+		-  Emerson, Lake and Palmer
+		-  The Staple Singers
+		-  James Taylor
+		-  Barry White
+		-  Bachman-Turner Overdrive
+		-  Jethro Tull
+		-  Bad Company
+		-  Steely Dan
+		-  Santana
+		-  Moody Blues
+		-  Electric Light Orchestra
+		-  Sex Pistols
+		-  Grand Funk Railroad
+		-  Journey
+		-  Foreigner
+		-  The Kinks
+		-  Patti Smith
+		-  Rufus (featuring Chaka Khan)
+		-  Kansas
+		-  Heart
+		-  Donna Summer
+		-  The Chi-Lites
+		-  Paul Simon
+		-  Linda Ronstadt
+		-  America
+		-  Styx
+		-  The Doors
+		-  Van Morrison
+		-  Iggy Pop
+		-  The James Gang
+		-  Van Halen
+		- . Lou Reed
+eighties:
+	songs: 7
+	artists:
+		- Michael Jackson
+		- Prince
+		- Madonna
+		- U2
+		- Bruce Springsteen
+		- Run-D.M.C.
+		- Van Halen
+		- Public Enemy
+		- Billy Joel
+		- The Police
+		- Phil Collins
+		- Guns N’ Roses
+		- Def Leppard
+		- Janet Jackson
+		- George Michael / Wham
+		- Whitney Houston
+		- Metallica
+		- N.W.A
+		- Dire Straits
+		- AC/DC
+		- Rush
+		- Iron Maiden
+		- Judas Priest
+		- Lionel Richie
+		- Bon Jovi
+		- Talking Heads
+		- Genesis
+		- R.E.M.
+		- Duran Duran
+		- Motley Crue
+		- The Cure
+		- Journey
+		- John Mellencamp
+		- Grandmaster Flash & The Furious Five
+		- REO Speedwagon
+		- Kool and the Gang
+		- L.L. Cool J
+		- Tina Turner
+		- Queen
+		- Beastie Boys
+		- Ozzy Osbourne
+		- The Smiths
+		- Huey Lewis and the News
+		- Bryan Adams
+		- Hall & Oates
+		- Pat Benatar
+		- Eric B. & Rakim
+		- Billy Idol
+		- Peter Gabriel
+		- INXS
+		- Tom Petty & the Heartbreakers
+		- Stevie Ray Vaughan & Double Trouble
+		- Eurythmics
+		- The Cars
+		- Aerosmith
+		- ZZ Top
+		- The Rolling Stones
+		- Heart
+		- David Bowie
+		- Elton John
+		- Rod Stewart
+		- Foreigner
+		- Stevie Wonder
+		- Toto
+		- Bob Seger
+		- The Pointer Sisters
+		- DJ Jazzy Jeff & The Fresh Prince
+		- Salt-N-Pepa
+		- Fleetwood Mac
+		- The Go-Go’s
+		- Paul McCartney
+		- Pet Shop Boys
+		- Don Henley
+		- Paul Simon
+		- Tracy Chapman
+		- Cyndi Lauper
+		- Depeche Mode
+		- Sonic Youth
+		- Pete Townshend
+		- Culture Club
+		- Gloria Estefan & Miami Sound Machine
+		- De La Soul
+		- Luther Vandross
+		- Chicago
+		- The Bangles
+		- Thompson Twins
+		- Yes
+		- Men at Work
+		- Pixies
+		- Pink Floyd
+		- Robert Palmer
+		- Kenny Loggins
+		- Whitesnake
+		- Sade
+		- Steve Winwood
+		- Billy Ocean
+		- Tears for Fears
+		- Bobby Brown
+		- Scorpions
+		- Simply Red
+nineties:
+	songs: 7
+	artists:
+		- Nirvana
+		- Pearl Jam
+		- Radiohead
+		- 2Pac
+		- Red Hot Chili Peppers
+		- Beck
+		- The Smashing Pumpkins
+		- Beastie Boys
+		- R.E.M.
+		- Dr. Dre
+		- Mariah Carey
+		- Alice In Chains
+		- Green Day
+		- Soundgarden
+		- Nine Inch Nails
+		- Rage Against The Machine
+		- U2
+		- Metallica
+		- A Tribe Called Quest
+		- Jeff Buckley
+		- Tool
+		- The Notorious B.I.G.
+		- Pavement
+		- Public Enemy
+		- Faith No More
+		- Bjork
+		- Korn
+		- PJ Harvey
+		- Tori Amos
+		- Phish
+		- Sonic Youth
+		- Weezer
+		- Guns N’ Roses
+		- Queensryche
+		- Oasis
+		- Dave Matthews Band
+		- Primus
+		- Blur
+		- Jane’s Addiction
+		- Neil Young
+		- Snoop Dogg
+		- Stone Temple Pilots
+		- My Bloody Valentine
+		- Pantera
+		- Sublime
+		- Dream Theater
+		- Marilyn Manson
+		- The Offspring
+		- Seal
+		- TLC
+		- Liz Phair
+		- The Fugees
+		- Madonna
+		- Manic Street Preachers
+		- Bush
+		- Mary J. Blige
+		- Jay Z
+		- OutKast
+		- Nas
+		- Eric Clapton
+		- Coolio
+		- The Verve
+		- Foo Fighters
+		- Sepultura
+		- Prince
+		- Silverchair
+		- The Flaming Lips
+		- The Black Crowes
+		- Jamiroquai
+		- 311
+		- Pixies
+		- Alanis Morissette
+		- Sinead O’Conner
+		- Missy Elliot
+		- Nick Cave & The Bad Seeds
+		- Lauryn Hill
+		- Hole
+		- Lenny Kravitz
+		- Megadeth
+		- The Roots
+		- Temple Of The Dog
+		- Garbage
+		- The Mighty Mighty Bosstones
+		- Mr. Bungle
+		- Slayer
+		- The Dandy Warhols
+		- Sheryl Crow
+		- Busta Rhymes
+		- Blind Melon
+		- Kenny Wayne Shepherd Band
+		- Creed
+		- Arrested Development
+		- Screaming Trees
+		- Wilco
+		- Fugazi
+		- Hootie & The Blowfish
+		- Matchbox Twenty
+		- Blues Traveler
+		- Ministry
+		- Barenaked Ladies
+zeroes:
+	songs: 7
+	artists:
+		- Outkast
+		- Eminem
+		- Coldplay
+		- Radiohead
+		- Kanye West
+		- Alicia Keys
+		- U2
+		- System of a Down
+		- The White Stripes
+		- Green Day
+		- Red Hot Chili Peppers
+		- Jay Z
+		- Gorillaz
+		- Usher
+		- The Strokes
+		- Queens of the Stone Age
+		- Tool
+		- Foo Fighters
+		- Missy Elliot
+		- Audioslave
+		- Beyoncé (Knowles)
+		- Incubus
+		- Pearl Jam
+		- Weezer
+		- A Perfect Circle
+		- Linkin Park
+		- Wilco
+		- Dave Matthews
+		- Beck
+		- Destiny’s Child
+		- Muse
+		- The Roots
+		- Franz Ferdinand
+		- Bruce Springsteen
+		- Common
+		- The Mars Volta
+		- Opeth
+		- Dream Theater
+		- Aaliyah
+		- Bright Eyes
+		- Ben Harper
+		- Blink-182
+		- Modest Mouse
+		- Death Cab for Cutie
+		- The Flaming Lips
+		- John Mayer
+		- Sigur Ros
+		- The Killers
+		- Snow Patrol
+		- The Shins
+		- The Deftones
+		- Phish
+		- In Flames
+		- The Dillinger Escape Plan
+		- Slipknot
+		- Porcupine Tree
+		- Chevelle
+		- The All American Rejects
+		- Velvet Revolver
+		- 50 Cent
+		- Mudvayne
+		- Kamelot
+		- At The Drive-In
+		- Maroon 5
+		- Korn
+		- The Libertines
+		- Staind
+		- Daughtry
+		- Nickleback
+		- Gov’t Mule
+		- Robert Randolph & Family Band
+		- Interpol
+		- Keane
+		- Mastodon
+		- Doves
+		- Scissor Sisters
+		- The Dandy Warhols
+		- Pink
+		- Lostprophets
+		- Iron & Wine
+		- Les Claypool
+		- Fugazi
+		- Kreator
+		- PJ Harvey
+		- Evanescence
+		- 311
+		- Ryan Adams
+		- Los Lonely Boys
+		- Meshuggah
+		- The Hives
+		- Jill Scott
+		- My Chemical Romance
+		- Sheryl Crow
+		- Fuel
+		- Five For Fighting
+		- Super Furry Animals
+		- AFI
+		- Jack Johnson
+		- 3 Doors Down
+		- Matchbox Twenty
+tens:
+	songs: 7
+	artists:

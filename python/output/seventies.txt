@@ -1,97 +1,98 @@
-Stevie Wonder
-Led Zeppelin
-Elton John
-Pink Floyd
-The Rolling Stones
-Eagles
-Marvin Gaye
-Queen
-James Brown
- The Who
- Black Sabbath
- Aretha Franklin
- David Bowie
- Paul McCartney / Wings
- Parliament Funkadelic
- The Isley Brothers
- Fleetwood Mac
- John Lennon
- Bee Gees
- Chicago
- Bob Marley
- The Jackson 5
- Earth, Wind & Fire
- Al Green
- Bruce Springsteen
- KISS
- The Clash
- Curtis Mayfield
- Lynyrd Skynyrd
- Alice Cooper
- Gladys Knight & The Pips
- The Allman Brothers Band
- Aerosmith
- Neil Young
- Bob Dylan
- Rod Stewart
- The O’Jays
- The Ramones
- Rush
- Bob Seger
- Steve Miller Band
- Grateful Dead
- The Beach Boys
- George Harrison
- Sly and the Family Stone
- Peter Frampton
- Elvis Presley
- Billy Joel
- Deep Purple
- Creedence Clearwater Revival
- Three Dog Night
- The Temptations
- Boston
- Jackson Browne
- Joni Mitchell
- Commodores
- Jim Croce
- AC/DC
- The Spinners
- Kool and The Gang
- Doobie Brothers
- Yes
- War
- ZZ Top
- The Guess Who
- Emerson, Lake and Palmer
- The Staple Singers
- James Taylor
- Barry White
- Bachman-Turner Overdrive
- Jethro Tull
- Bad Company
- Steely Dan
- Santana
- Moody Blues
- Electric Light Orchestra
- Sex Pistols
- Grand Funk Railroad
- Journey
- Foreigner
- The Kinks
- Patti Smith
- Rufus (featuring Chaka Khan)
- Kansas
- Heart
- Donna Summer
- The Chi-Lites
- Paul Simon
- Linda Ronstadt
- America
- Styx
- The Doors
- Van Morrison
- Iggy Pop
- The James Gang
- Van Halen
-. Lou Reed
+seventies:
+		Stevie Wonder
+		Led Zeppelin
+		Elton John
+		Pink Floyd
+		The Rolling Stones
+		Eagles
+		Marvin Gaye
+		Queen
+		James Brown
+		 The Who
+		 Black Sabbath
+		 Aretha Franklin
+		 David Bowie
+		 Paul McCartney / Wings
+		 Parliament Funkadelic
+		 The Isley Brothers
+		 Fleetwood Mac
+		 John Lennon
+		 Bee Gees
+		 Chicago
+		 Bob Marley
+		 The Jackson 5
+		 Earth, Wind & Fire
+		 Al Green
+		 Bruce Springsteen
+		 KISS
+		 The Clash
+		 Curtis Mayfield
+		 Lynyrd Skynyrd
+		 Alice Cooper
+		 Gladys Knight & The Pips
+		 The Allman Brothers Band
+		 Aerosmith
+		 Neil Young
+		 Bob Dylan
+		 Rod Stewart
+		 The O’Jays
+		 The Ramones
+		 Rush
+		 Bob Seger
+		 Steve Miller Band
+		 Grateful Dead
+		 The Beach Boys
+		 George Harrison
+		 Sly and the Family Stone
+		 Peter Frampton
+		 Elvis Presley
+		 Billy Joel
+		 Deep Purple
+		 Creedence Clearwater Revival
+		 Three Dog Night
+		 The Temptations
+		 Boston
+		 Jackson Browne
+		 Joni Mitchell
+		 Commodores
+		 Jim Croce
+		 AC/DC
+		 The Spinners
+		 Kool and The Gang
+		 Doobie Brothers
+		 Yes
+		 War
+		 ZZ Top
+		 The Guess Who
+		 Emerson, Lake and Palmer
+		 The Staple Singers
+		 James Taylor
+		 Barry White
+		 Bachman-Turner Overdrive
+		 Jethro Tull
+		 Bad Company
+		 Steely Dan
+		 Santana
+		 Moody Blues
+		 Electric Light Orchestra
+		 Sex Pistols
+		 Grand Funk Railroad
+		 Journey
+		 Foreigner
+		 The Kinks
+		 Patti Smith
+		 Rufus (featuring Chaka Khan)
+		 Kansas
+		 Heart
+		 Donna Summer
+		 The Chi-Lites
+		 Paul Simon
+		 Linda Ronstadt
+		 America
+		 Styx
+		 The Doors
+		 Van Morrison
+		 Iggy Pop
+		 The James Gang
+		 Van Halen
+		. Lou Reed

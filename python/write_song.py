@@ -4,12 +4,13 @@ import json
 import requests
 from collections import defaultdict
 import yaml
+import time
 
 
 # Parameters
 default_limit = 8
 default_room = "mixed"
-default_file = "test.yml"
+default_file = "output/output.yml"
 default_log = "log.json"
 
 # Globals
@@ -97,6 +98,8 @@ def find_song_ids(artist,limit=default_limit,room=default_room):
               "artworkUrl60": str(json_lines["artworkUrl60"]),
               "artworkUrl100": str(json_lines["artworkUrl100"])
             }
+
+            print("Writing " + json_lines['trackName'] + " to database")
 
             # Fill db with songs
             err = rc.hmset('song:'+str(song_id),rq_dict)
