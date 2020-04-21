@@ -1,7 +1,7 @@
 'use strict'; 
  
 module.exports = {
-	kees: [
+	eighties: [
 		32940, // Michael Jackson from Michael+Jackson
 		155814, // Prince from Prince
 		20044, // Madonna from Madonna

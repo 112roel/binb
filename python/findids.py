@@ -7,13 +7,15 @@ import requests, time, json
 # I'm not responsible for any damage done (lost friendships, etc)
 
 # Parameters
+print("which genre")
+genre = input()
 search_limit = 10
 rate_limit_sleep = 1
-genre = "dbvh"
+
 
 # Open artist file or use standard
 try:
-    f = open("artistlist.txt", "r")
+    f = open("output/" + genre +".txt", "r")
     artist = []
     for line in f:
         line = line.replace(' ','+')
@@ -45,10 +47,12 @@ for name in artist:
 
     # Transform json input to python objects
     artist_ids = []
+    artist_names = []
     for counts in range(search_limit):
         try:
             json_lines = json.loads(r.text)["results"][counts]
             artist_ids.append(json_lines["artistId"])
+            artist_names.append(json_lines["artistName"])
         except:
             break
 
@@ -56,7 +60,8 @@ for name in artist:
     # Otherwise, just take to most common artist
     if len(artist_ids) > 0:
         artist_id_list.append(most_frequent(artist_ids))
-        artist_name_list.append(name.replace("+"," "))
+        artist_name_list.append(most_frequent(artist_names) + " from " + name)
+        print(name + " found as " + most_frequent(artist_names))
     else:
         print(name + " cant be found")
 
@@ -64,7 +69,7 @@ for name in artist:
 
 
 # Write data to file
-f = open("artist-ids.js", "w")
+f = open("outputjs/"+ genre +".js", "w")
 f.write("'use strict'; \n \nmodule.exports = {\n\t"+genre+": [\n")
 for index, _ in enumerate(artist_id_list):
     f.write("\t\t" + str(artist_id_list[index]) + ", // " + artist_name_list[index] + "\n")
