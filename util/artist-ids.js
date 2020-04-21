@@ -39,7 +39,7 @@ module.exports = {
   ],
   nederlands: [
     348185755, // Jurk
-    269270940, // KvK
+    269270940, // Kvk
     25341954, // K3
     33125520, // Volumia
     119907911, // Doe Maar

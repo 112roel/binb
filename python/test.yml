@@ -1,0 +1,58 @@
+zeroes:
+  songs: 6
+  artists:
+    - cranberries
+    - linkin park
+    - red hot chilli peppers
+    - electric eel shock
+
+k3:
+  songs: 50
+  artists:
+    - k3
+
+dbvh:
+  songs: 3
+  artists:
+    - doe maar
+    - dijk
+    - blof
+    - alphabeat
+
+nederlands:
+  songs: 20
+  artists:
+    - yes-r
+    - ali b
+    - the opposites
+    - de jeugd van tegenwoordig
+    - party squad
+    - k-liber
+    - paul elstak
+    - brace
+
+caro:
+  songs: 10
+  artists:
+    - rihanna
+    - yes r
+    - ali b
+    - brace
+    - justin timberlake
+    - timbaland
+    - pussycat dolls
+    - atomic kitten
+    - jennifer lopez
+    - fergie
+    - black eyed peas
+    - neyo
+    - gwen steffani
+    - nsync
+    - backstreet boys
+    - westlife
+    - one direction
+    - christina aguilera
+    - shakira
+    - taio cruz
+    - cascada
+    - enrique englesias

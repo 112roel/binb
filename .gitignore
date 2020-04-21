@@ -6,4 +6,7 @@ public/js/home.min.js
 public/js/leaderboards.min.js
 public/js/primus.min.js
 python/myenv
+python/myenv/
+myenv/
+myenv
 *.idea

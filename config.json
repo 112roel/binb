@@ -1,6 +1,6 @@
 {
   "gameswithnorepeats": 3,
   "port": 8138,
-  "rooms": ["zeroes", "ninetees", "nederlands", "dbvh", "zeroes-ninetees", "mixed"],
-  "songsinarun": 25
+  "rooms": ["zeroes", "k3", "dbvh", "nederlands", "caro", "mixed"],
+  "songsinarun": 15
 }

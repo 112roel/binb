@@ -1,5 +1,5 @@
 # Specify a base image
-FROM node:13-slim
+FROM node:10.0-slim
 
 # Install ubuntu stuff
 RUN apt-get update && apt-get install libcairo2-dev -y

@@ -3,6 +3,21 @@ services:
   redis:
     container_name: db
     image: redis:6.0-rc-alpine
+    ports:
+      - 6379:6379
+  python:
+    container_name: gather
+    image: python:3.7-alpine
+    build:
+      context: .
+      dockerfile: python/Dockerfile
+    environment:
+      - REDIS_URL=db
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+    command:
+        python write_song.py
   nodejs:
     container_name: app
     build: .
@@ -12,6 +27,6 @@ services:
     ports:
       - 8138:8138
     depends_on:
-      - redis
+      - python
     command:
-        bash -c "npm run import-data && npm start"
+        bash -c "npm start"
