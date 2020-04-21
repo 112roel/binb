@@ -7,13 +7,17 @@ var port = process.env.REDIS_PORT || 6379
 const artistIds = require('./artist-ids');
 const http = require('http');
 const JSONStream = require('JSONStream');
-const limit = 8; // The number of songs to retrieve for each artist
+const limit = 7; // The number of songs to retrieve for each artist
 const parser = JSONStream.parse(['results', true]);
 
-const nineteesIds = artistIds.ninetees;
+const sixtiesIds = artistIds.sixties; 
+const seventiesIds = artistIds.seventies;
+const eightiesIds = artistIds.eighties;
+const ninetiesIds = artistIds.nineties;
 const zeroesIds = artistIds.zeroes;
+const tensIds = artistIds.tens;
 const nederlandsIds = artistIds.nederlands;
-const dbvhIds = artistIds.dbvh;
+
 
 
 const rc = require('redis').createClient({ host: db, port: port })
@@ -28,11 +32,48 @@ const options = {
   // Look up multiple artists by their IDs and get `limit` songs for each one
   path:
     '/lookup?id=' +
-    nineteesIds.concat(zeroesIds, nederlandsIds, dbvhIds).join() +
+    sixtiesIds.concat(seventiesIds).join() +
     '&entity=song&limit=' +
     limit + '&country=NL&sort=popular',
   port: 80
 };
+
+const options2 = {
+  headers: { 'content-type': 'application/json' },
+  host: 'itunes.apple.com',
+  // Look up multiple artists by their IDs and get `limit` songs for each one
+  path:
+    '/lookup?id=' +
+    eightiesIds.concat(ninetiesIds).join() +
+    '&entity=song&limit=' +
+    limit + '&country=NL&sort=popular',
+  port: 80
+};
+
+const options3 = {
+  headers: { 'content-type': 'application/json' },
+  host: 'itunes.apple.com',
+  // Look up multiple artists by their IDs and get `limit` songs for each one
+  path:
+    '/lookup?id=' +
+    zeroesIds.concat(tensIds).join() +
+    '&entity=song&limit=' +
+    limit + '&country=NL&sort=popular',
+  port: 80
+};
+
+const options4 = {
+  headers: { 'content-type': 'application/json' },
+  host: 'itunes.apple.com',
+  // Look up multiple artists by their IDs and get `limit` songs for each one
+  path:
+    '/lookup?id=' +
+    nederlandsIds.join() +
+    '&entity=song&limit=' +
+    limit + '&country=NL&sort=popular',
+  port: 80
+};
+
 
 /**
  * Set the rooms in which the songs of a given artist will be loaded.
@@ -41,19 +82,28 @@ const options = {
 const updateRooms = function(artistId) {
   rooms = ['mixed'];
   score = 0;
-  if (artistId === nineteesIds[0]) {
-    rooms.push('ninetees', 'zeroes-ninetees', 'mixed');
+  if (artistId === sixtiesIds[0]) {
+    rooms.push('sixties', 'hits', 'mixed');
     // Set the skip counter (there is no need to update the rooms for the next pop artists)
-    skip = nineteesIds.length - 1;
+    skip = sixtiesIds.length - 1;
+  } else if (artistId === seventiesIds[0]) {
+    rooms.push('seventies', 'hits', 'mixed');
+    skip = seventiesIds.length - 1;
+  } else if (artistId === eightiesIds[0]) {
+    rooms.push('eighties', 'hits', 'mixed');
+    skip = eightiesIds.length - 1;
+  } else if (artistId === ninetiesIds[0]) {
+    rooms.push('nineties', 'hits', 'mixed');
+    skip = ninetiesIds.length - 1;
   } else if (artistId === zeroesIds[0]) {
-    rooms.push('zeroes', 'zeroes-ninetees', 'mixed');
+    rooms.push('zeroes', 'hits', 'mixed');
     skip = zeroesIds.length - 1;
-  } else if (artistId === nederlandsIds[0]) {
+  } else if (artistId === tensIds[0]) {
+    rooms.push('tens', 'hits', 'mixed');
+    skip = tensIds.length - 1;
+  } else {
     rooms.push('nederlands', 'mixed');
     skip = nederlandsIds.length - 1;
-  } else {
-    rooms.push('dbvh');
-    skip = dbvhIds.length - 1;
   }
 };
 
@@ -106,12 +156,17 @@ parser.on('end', function() {
   process.stdout.write('OK\n');
 });
 
-rc.del(rooms, function(err) {
+rc.del(rooms, async function(err) {
   if (err) {
     throw err;
   }
-  process.stdout.write('Loading sample tracks... ');
+  process.stdout.write('Loading sample tracks part 1... ');
   http.get(options, function(res) {
     res.pipe(parser);
   });
+  setTimeout(function(){
+    http.get(options2, function(res) {
+      res.pipe(parser);
+    });
+  }, 60000)
 });
