@@ -25,6 +25,7 @@ services:
     environment:
       - REDIS_URL=db
       - REDIS_PORT=6379
+      - SITE_SECRET="VERY HARD TO GUESS CODE"
     ports:
       - 8138:8138
     depends_on:
