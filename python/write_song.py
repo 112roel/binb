@@ -5,12 +5,12 @@ import requests
 from collections import defaultdict
 import yaml
 
-
 # Parameters
 default_limit = 8
 default_room = "mixed"
 default_file = "test.yml"
 default_log = "log.json"
+verbose = 0
 
 # Globals
 song_id = 0
@@ -30,6 +30,13 @@ else:
     db_port = 6379
 rc = redis.Redis(host=db_url, port=db_port, db=0)
 
+# Clear db for debugging
+if os.getenv("CLEAR_DB"):
+    print('database will be cleared')
+    rc.flushall()
+
+if os.getenv("VERBOSE"):verbose = 2
+
 # Functions
 # Find the most frequest thing in a list
 def most_frequent(List):
@@ -46,6 +53,7 @@ def read_yml(inputfile=default_file):
     with open(inputfile, 'r') as stream:
         try:
             data = yaml.safe_load(stream)
+            print("Loading complete")
         except yaml.YAMLError as exc:
             print(exc)
 
@@ -116,14 +124,14 @@ def find_song_ids(artist,limit=default_limit,room=default_room):
 
             err = rc.zadd(room,room_dict)
             if not (err):
-                if err == 0:
+                if err == 0 and verbose > 1:
                     print("Already in the room: " + str(json_lines["trackName"]))
                 else:
                     print("Error with " + str(json_lines["trackName"]) + " in room: " + str(room))
 
             err = rc.zadd("mixed", mixed_dict)
             if not (err):
-                if err == 0:
+                if err == 0 and verbose > 1:
                     print("Already in the room: " + str(json_lines["trackName"]))
                 else:
                     print("Error with " + str(json_lines["trackName"]) + " in room: " + str(room))
